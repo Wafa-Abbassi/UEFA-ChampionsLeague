@@ -1,6 +1,8 @@
 import React from 'React'
 import teamImage from '../images/UEFa_cup_logo_new.png'
 
+import 'Bracket.css'
+
 
 
 
@@ -14,9 +16,20 @@ export default class Round extends React.Component() {
 
     render() {
         return <>
+         <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <table class="tournament-bracket__table">
+              <caption class="tournament-bracket__caption">
+              </caption>
+
         {props.roundPairings.forEach((el, i) => {
         return <Matchup pairing={el} />
     })}
+    </table>
+    </div>
+    </li>
+    </ul>
 
 </>
     }
